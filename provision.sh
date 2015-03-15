@@ -68,6 +68,10 @@ echo "GRANT PROXY ON ''@'' TO 'root'@'%' WITH GRANT OPTION" | mysql -u root --pa
 service apache2 restart
 service mysql restart
 
+
+curl -sS https://getcomposer.org/installer | php
+mv composer.phar /usr/local/bin/composer
+
 # Cleanup the default HTML file created by Apache
 rm /var/www/html/index.html
 
