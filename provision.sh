@@ -1,9 +1,12 @@
 #!/bin/bash
 
+apt_config_file="/etc/apt/sources.list"
 php_config_file="/etc/php5/apache2/php.ini"
 xdebug_config_file="/etc/php5/mods-available/xdebug.ini"
 mysql_config_file="/etc/mysql/my.cnf"
 
+
+sed -i "s/http:\/\/archive.ubuntu.com\/ubuntu/mirror:\/\/mirrors.ubuntu.com\/mirrors.txt/g" ${apt_config_file}
 
 # Update the server
 apt-get update
